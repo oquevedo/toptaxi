@@ -1,0 +1,101 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+      %link{:rel=>"icon", :type => "image/ico", :href => "/assets/favicon.ico"}
+      %title= content_for?(:title) ? yield(:title) : t('common.app_name')
+      %meta{:content => content_for?(:description) ? yield(:description) : t('common.app_desc'), :name => "description"}
+      = metamagic
+      = stylesheet_link_tag "application", :media => "all" #, "data-turbolinks-track" => true
+      = javascript_include_tag "application" #, "data-turbolinks-track" => true
+      = csrf_meta_tags
+      = yield(:head)
+
+      -# Mobile First
+      %meta{name: "viewport", content:"width=device-width, initial-scale=1"}
+      
+      -# Google Analytics
+        :javascript
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-XXXXXX-X', 'dominio.cl');
+          ga('send', 'pageview');
+
+      -# Metatags para Facebook y Twitter
+        %link{ :rel => "image_src",  :href => "/assets/logocuadrado.png" }
+        %meta{ :property=>"og:image" , :content=>"/assets/logocuadrado.png" }
+        %meta{ :property=>"og:type" , :content=>"company" }
+        %meta{ :property=>"og:site_name" , :content=> t('common.app_name') }
+        %meta{ :property=>"og:url" , :content=> t('common.app_url') }
+        %meta{ :property=>"og:description",  :content=> t('common.app_desc') }
+      -# Keywords para google y metatag de verificación de ownership
+        %meta{  :name=>"keywords", :content=>"brainshots,brainshots.cl,ingenieria,tecnología,emprendimiento,chile" }
+        %meta{ :name=>"google-site-verification", :content=>"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" }
+
+  %body{:class => "#{controller_name} #{action_name}"}
+    :javascript
+      // https://developers.facebook.com/docs/plugins/comments
+      (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        //js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=253929998121241";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        // ON PAGE LOAD
+        setTimeout(function(){
+          resizeFacebookComments();
+        }, 1000);
+        setTimeout(function(){
+          resizeFacebookComments();
+        }, 2000);
+        // ON PAGE RESIZE
+        $(window).on('resize', function(){
+          resizeFacebookComments();
+        });
+        function resizeFacebookComments(){
+          if($('.fb-comments iframe').length){
+            var src   = $('.fb-comments iframe').attr('src').split('width='),
+                width = $('.fb-comments').parent().width();
+            $('.fb-comments iframe').attr('src', src[0] + 'width=' + width);
+          }
+        }
+    %header{:role => "banner"}
+      .navbar-header
+
+    .transition
+      .marginMenu
+        .slidemenu.visible-xs.alterHeight  
+          = render 'layouts/slidemenu'
+
+      .contGeneral.alterHeight    
+        -unless @hide_header
+          %header{:role => "banner"}
+            .navbar-header
+              %button.navbar-toggle.fa.fa-bars.visible-xs.slidemenu-trigger{ :type => "button"}
+              %a.navbar-brand{:href => home_path}= t('common.app_name')
+              %button.navbar-toggle.fa.fa-plus-square-o.btnPlus.visible-xs{"data-target" => ".bs-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              .nav.mainmenu.hidden-xs
+                = render 'layouts/navigation'
+        .visible-xs
+          .marginMenu
+          %nav.collapse.navbar-collapse.bs-navbar-collapse.menuExtra{:role => "navigation"}
+            = render 'layouts/navigation'
+
+
+
+
+
+        .container-fluid
+          = render 'layouts/messages'
+          -unless current_user
+            = render partial: "sessions/login"
+            = render partial: "sessions/register"
+          = yield
+
+      .hidden-xs
+        = render 'layouts/footer'
+    .visible-xs
+      = render 'layouts/footer'

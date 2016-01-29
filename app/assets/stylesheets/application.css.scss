@@ -1,0 +1,152 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require font-awesome
+ */
+
+// General defaults
+html {
+  height: 100%;
+}
+body{
+  font-family: Lato, Arial, Helvetica;
+  height: 100%;
+}
+.row {
+  margin: 0 !important;
+}
+@media(max-width:767px) {
+  body {
+    font-size: 12px !important;
+    height: auto;
+    .container-fluid {
+      padding-bottom: 0;
+    }
+  }
+}
+// a, a:visited {
+//   color: #ffffff;
+//   &:hover {
+//     color: #f2f2f2;
+//   }
+//   &:focus {
+//     color: #f2f2f2;
+//     background: none no-repeat scroll 0 0 #90A4AE;
+//   }
+// }
+.content {
+  border: 1px solid #cccccc;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+  height: 10px;
+}
+.strippedClear {
+  width: 100%;
+  height: 1px;
+  background: none no-repeat scroll 0 0 #cccccc;
+  margin: 40px 0 20px;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+
+@media(max-width:767px) {
+  td {
+    .btn, .btn-primary, .btn-default, .btn-danger, .btn-success, .btn-alert {
+      width: 100% !important;
+      margin: 0 0 5px 0 !important;
+      padding: 5px !important;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+}
+.alterHeight {
+  padding-bottom: 14000px !important;
+  margin-bottom: -14000px !important;
+}
+.transition {
+  overflow: hidden;
+  min-height: 100%;
+}
+@media(min-width:767px) {
+  .right {
+    float: right !important;
+  }
+  .transition {
+    position: relative;
+  }
+}
+.container-fluid {
+  padding-bottom: 100px;
+  h1 {
+    font-size: 20px;
+    background: none no-repeat scroll 0 0 #ECEFF1;
+    padding: 10px;
+    border-radius: 5px;
+    color: #37474F;
+    margin: 20px 0;
+    &.noBg {
+      background: none no-repeat scroll 0 0 transparent;
+      margin: 0;
+    }
+  }
+  h5 {
+    color: #37474F;
+    font-weight: normal;
+    font-size: 16px;   
+  }
+}
+table {
+  th {
+    background: none no-repeat scroll 0 0 #78909C;
+    color: #ffffff;
+    border: medium none !important;
+  }
+}
+
+//Modal
+.modal-content {
+  overflow: hidden;
+  .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 16.428571429px;
+    background: none no-repeat scroll 0 0 #607D8B;
+    border-radius: 5px 5px 0 0;
+    color: #ffffff;
+  }
+  .modal-body {
+    .intModalLog {
+      width: 80%;
+      margin: 0 auto 20px;
+      display: block;
+      .field {
+        color: #666666;
+        input#password, input#email{
+          background: none no-repeat scroll 0 0 #ffffff !important;
+          -webkit-box-shadow: 0 0 0px 1000px white inset;
+          -webkit-text-fill-color: #666666 !important;
+        }
+      }
+    }
+  }
+}

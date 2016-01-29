@@ -1,0 +1,21 @@
+.users
+  .col-md-6.col-md-offset-3
+    %h1= @user.first_name 
+  .clear  
+  .col-md-6.col-md-offset-3
+    .content  
+      -if false and @user.has_image?
+        %p
+          = image_tag @user.get_image
+      %p
+        %b Nombre:
+        = @user.first_name
+      %p
+        %b Apellido:
+        = @user.last_name
+      %p
+        %b Email:
+        = @user.email
+  .clear
+  .col-md-6.col-md-offset-3
+    = link_to 'Editar', edit_user_path(@user), :class => 'btn btn-default pull-right'

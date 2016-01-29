@@ -1,0 +1,35 @@
+.users
+  %h1="Usuarios"
+
+  %table.table
+    %tr
+      %th Nombre
+      %th Apellido
+      %th Email
+      %th Manejar Usuarios
+      %th Manejar Campañas
+      %th Acciones
+
+    - @users.each do |user|
+      %tr
+        %td= user.first_name + ((current_user.admin? and user.admin?) ? "(Admin)" : ""  )
+        %td= user.last_name
+        %td= user.email
+        %td
+          - if user.manage_user or user.admin?
+            .fa.fa-check
+          - else
+            .fa.fa-times
+        %td
+          - if user.manage_campaign or user.admin?
+            .fa.fa-check
+          - else
+            .fa.fa-times
+        %td
+          = link_to 'Ver', user, :class => 'btn btn-default'
+          = link_to 'Editar', edit_user_path(user), :class => 'btn btn-default'
+          = link_to 'Eliminar', user, :class => 'btn btn-danger', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to ' Nuevo Usuario', new_user_path, :class => 'btn btn-default icon-plus'

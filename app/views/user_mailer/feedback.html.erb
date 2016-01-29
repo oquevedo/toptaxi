@@ -1,0 +1,13 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+<%= I18n.t("mails.feedback.subtitle", {name: @user}) %>
+<br>
+<% if @message %>
+	<%= @message.html_safe %>
+<% else %>
+	<%= I18n.t("mails.feedback.thanks") %><br />
+	<%= I18n.t("mails.feedback.soon") %>
+<% end %>
+<br><br>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

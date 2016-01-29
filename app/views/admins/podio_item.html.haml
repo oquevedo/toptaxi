@@ -1,0 +1,46 @@
+.container
+  %h4 Datos Generales
+  .row.contact-data
+    .col-sm-4
+      .col-xs-4 ID
+      .col-xs-8= @item[:app_id].to_i
+      .col-xs-4 Patente
+      .col-xs-8= link_to @item[:patente],@item[:link]
+    .col-sm-4
+      .col-xs-4 Estado
+      .col-xs-8= @item[:estado]
+      .col-xs-4 Contacto
+      .col-xs-8= @item[:contact]
+    .col-sm-4
+      .col-xs-4 Campañas
+      .col-xs-8= @item[:campains].map{|c| c[:name]}.join(", ")
+  .podio_data{style: "display:none"}= @item.to_s
+  %br
+  %h4 Datos Taxistas
+
+  .row
+    -@drivers.each do |d|
+      .row.contact-data
+        .col-sm-1= "ID: #{d[:app_id]}"
+        .col-sm-3= link_to "Nombre: #{d[:name]}", d[:link]
+        .col-sm-2= "Teléfono: #{d[:phone]}"
+        .col-sm-2= "Rut: #{ d[:rut]}"
+        .col-sm-4= "Mail: #{ d[:mail]}"
+  %br
+  %h4 Datos Dueños
+  .row
+    -@owners.each do |d|
+      .row.contact-data
+        .col-sm-1= "ID: #{d[:app_id]}"
+        .col-sm-3= link_to "Nombre: #{d[:name]}", d[:link]
+        .col-sm-2= "Teléfono: #{d[:phone]}"
+        .col-sm-2= "Rut: #{ d[:rut]}"
+        .col-sm-4= "Mail: #{ d[:mail]}"
+  %br
+  %h4 Datos Administradores
+  .row
+    -@administrators.each do |d|
+      .row.contact-data
+        .col-sm-1= "ID: #{d[:app_id]}"
+        .col-sm-3= link_to "Nombre: #{d[:name]}", d[:link]
+        .col-sm-2= "Teléfono: #{d[:phone]}"

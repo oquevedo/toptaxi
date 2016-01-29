@@ -1,0 +1,33 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "coloresw8";
+@import "functions";
+
+// END SOCIAL_FOOTER
+
+// File Inputs Into Shape with Bootstrap 3
+// http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3/
+// .btn.btn-default.btn-file
+//   Buscar
+//   %input{type: "file"}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

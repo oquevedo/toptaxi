@@ -1,0 +1,8 @@
+.users
+  .col-md-6.col-md-offset-3
+    %h1 Registro de usuarios
+  .col-md-6.col-md-offset-3
+    .content
+      = render 'form', :locals => {:@no_errors => @no_errors}
+
+  .clear

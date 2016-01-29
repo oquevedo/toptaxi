@@ -1,0 +1,42 @@
+Blog:
+  titulo
+  descripcion, texto enriquezido (what you see what you get)
+  usuario creador
+  ✔ scaffold blog @done (15-04-07 14:34)
+    title:string, description:text user:references
+  ✔ some style @done (15-04-07 14:35)
+  ✔ permisos en cancancan (basicos) @done (15-04-07 15:25)
+  ☐ rich text
+  ✔ add current user como creador @done (15-04-07 15:26)
+  ✔ seeds @done (15-04-08 08:52)
+  comentarios: 
+    (juntos pero no revueltos)
+    ✔ propios @done (15-04-13 11:12)
+       ✔ scaffold para comentarios @done (15-04-07 17:10)
+       ✔ add to blog @done (15-04-07 17:10)
+       ✔ fix redirects @done (15-04-13 11:12)
+       ✔ permisos cancancan @done (15-04-08 08:52)
+       ✔ nested comments @done (15-04-13 11:11)
+         ✔ migration @done (15-04-08 15:18)
+         ✔ levantar formulario respuesta @done (15-04-08 16:46)
+         ✔ guardar respuesta lvl 1 @done (15-04-08 16:46)
+           primer nivel 
+         ✔ guardar respuesta lvl 2 @done (15-04-10 16:12)
+           respuesta de una respuesta
+         ✔ habilitar ajax para la respuesta lvl 2 @done (15-04-13 11:11)
+         ✔ listar comentarios lvl 1 @done (15-04-08 16:47)
+         ✔ listar nested comentarios @done (15-04-10 14:59)
+    ☐ facebook
+      https://developers.facebook.com/docs/plugins/comments
+  share:
+    ✔ metamagic para compartir urls y sacar información correcta en share buttons @done (15-04-13 13:49)
+    ☐ facebook
+    ☐ twitter
+
+El blog debe tener comentarios de  facebook. Para lo de facebook pedir acceso a proyecto DaleConTodo (bitbucket).
+  Debe tener Share en facebook y twitter.
+  Debe tener texto enriquecido
+
+*Compartir está en LaRutaSolar
+
+*Si se necesita crear una cuenta/app para probarlo, crear una cuenta con nombre default_init o bien bs_default_init

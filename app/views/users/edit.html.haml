@@ -1,0 +1,11 @@
+.users
+  .col-md-6.col-md-offset-3
+    %h1= t('modules.edit.title')
+
+  .col-md-6.col-md-offset-3
+    .content
+      = render 'form'
+
+  .clear
+  .col-md-6.col-md-offset-3
+    = link_to 'Volver', @user, :class => 'btn btn-default pull-right'

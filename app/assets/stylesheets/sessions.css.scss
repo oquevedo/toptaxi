@@ -1,0 +1,75 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "coloresw8";
+
+.form {
+  .field {
+    width: 100%;
+    clear: both;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+  }
+}
+
+.field_with_errors{
+  display: inline;
+  input{
+    border: 1px solid red; 
+  }
+}
+
+.form-horizontal {
+  .field.imgField {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    .icon {
+      width: 50%;
+      text-align: center;
+      margin: auto;
+      display: block;
+      float: none;
+      img {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+  .field{
+    .icon{
+      font-size: 20px;
+      padding: 0px;
+      text-align: center;
+      width: 10%;
+      float: left;
+      i.fa.fa-user{
+        .name-number{
+          margin-right: 3px;
+          vertical-align: top;
+          font-size: 11px;
+          float: right;
+        }
+      }
+      img{
+        width: 32px;
+        margin-left: -5px;
+      }
+    }
+    input, select, textarea{
+      display: inline;
+      width: 90%;
+      &.btn {
+        width: 100%;
+        margin: 15px 0 0 0;
+        color: #ffffff;
+      }
+    }
+  }
+  .form-control.file{
+    border: none;
+    box-shadow: none;
+  }
+}

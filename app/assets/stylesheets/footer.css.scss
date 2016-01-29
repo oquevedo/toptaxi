@@ -1,0 +1,93 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 80px;
+  background: none no-repeat scroll 0 0 #263238;
+  .footer_social {
+    color: #ffffff;
+    overflow: hidden;
+    margin: 20px 0 0;
+    text-align: center;
+    .copy { 
+      p strong { 
+        font-weight: bold; 
+      } 
+    }
+    .social { 
+      ul{
+        list-style: none;
+        overflow: hidden;
+        li{
+          float:left; 
+          margin:0 0 0 9px;
+          a {
+            width:37px; 
+            height:37px; 
+            display:block; 
+            opacity:0.4;   
+            -ms-filter: "progid:DXImageTrans form.Microsoft.Alpha(Opacity=40)"; 
+            &:hover {  
+              opacity:1;  
+              -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";             
+            } 
+          }
+        }
+        .google a {   
+          background:url(/assets/google.png) no-repeat;  
+        }
+        .facebook a { 
+          background:url(/assets/facebook.png) no-repeat; 
+        }
+        .twitter a { 
+          background:url(/assets/twitter.png) no-repeat; 
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+  footer {
+    position: relative;
+    .footer_social {
+      .contFtr {
+        margin: 15px 10px;
+      }
+      .copy { 
+      }
+      .social { 
+        ul{
+          list-style: none;
+          overflow: hidden;
+          width: 228px;
+          margin: auto;
+          li{
+            float:left; 
+            margin:0 0 0 9px;
+            a {
+              width:37px; 
+              height:37px; 
+              display:block; 
+              opacity:0.4;   
+              -ms-filter: "progid:DXImageTrans form.Microsoft.Alpha(Opacity=40)"; 
+              &:hover {  
+                opacity:1;  
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";             
+              } 
+            }
+          }
+          .google a {   
+            background:url(/assets/google.png) no-repeat;  
+          }
+          .facebook a { 
+            background:url(/assets/facebook.png) no-repeat; 
+          }
+          .twitter a { 
+            background:url(/assets/twitter.png) no-repeat; 
+          }
+        }
+      }
+    }
+  }
+}

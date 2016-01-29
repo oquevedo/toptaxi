@@ -1,0 +1,27 @@
+.centered-container.big
+  .clear
+  %h2 
+    Listado de datos desde Podio
+    %small= "Mostrando 30 resultados de #{@total.to_i}"
+
+  %table.table
+    %tr
+      %th ID
+      %th Patente
+      %th Encargado
+      %th Contacto
+      %th Acciones
+    - @cars.each do |r|
+      %tr
+        %td= r[:app_id].to_i
+        %td=  link_to  r[:patente], r[:link], _target: "blank"
+        %td= link_to r[:user][:name] + " - " +  r[:user][:relationship], r[:user][:link], _target: "blank"
+        %td= r[:contact]
+        %td= link_to "ver más", podio_item_path(r[:item_id])
+
+  %br
+  .pages
+    .pull-right
+      - @pages.times do |i|
+        =link_to podio_info_path(page: i) do
+          %span.page{class: i == @page ? "active" : ""}=i+1

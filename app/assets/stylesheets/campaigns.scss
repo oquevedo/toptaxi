@@ -1,0 +1,32 @@
+// Place all the styles related to the campaigns controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "coloresw8";
+@import "functions";
+
+.contact-data{
+	background-color: #EFEFEF;
+	border: 1px solid $cyan-border;
+	@include radius(5px);
+	padding: 5px;
+}
+.pages{
+
+	.page{
+		display: inline-block;
+		font-size: 15px;
+		border: 1px solid #EFEFEF;
+
+	    height: 25px;
+	    width: 35px;
+	    text-align: center;
+
+	    margin-right: -5px;
+		&.active{
+			color:white;
+			background-color: $blue;
+		}
+	}
+}

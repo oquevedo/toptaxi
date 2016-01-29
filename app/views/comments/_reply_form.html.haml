@@ -1,0 +1,20 @@
+= form_for @comment, html: {class: 'reply_form'}, remote: true do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.text_area :body
+  = f.hidden_field :blog_id
+  = f.hidden_field :user_id
+  = f.hidden_field :parent_comment_id
+  = f.hidden_field :response_to_comment_id
+  = f.hidden_field :response_to_user_id
+  .actions
+    = f.submit 'Save', :class => 'btn btn-default'
+
+:javascript
+  window.bindForms()

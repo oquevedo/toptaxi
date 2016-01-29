@@ -1,0 +1,17 @@
+%ul.nav.navbar-nav.btnMenu2int
+	- if current_user
+		%li.imgUser.hidden-xs
+			= image_tag current_user.get_image(:thumb), class: "img-circle"
+		- if (can? :manage, :admin)
+			%li.btnNombre
+				= link_to t('common.admin.users'), users_path
+		%li.btnNombre
+			= link_to current_user.to_s, user_path(current_user)
+
+		%li.btnNombre
+			= link_to "Home", home_path
+		%li.btnsalir 
+			= link_to t('common.nav.logout'), log_out_path
+	- else
+		%li.btnNombre 
+			= link_to t('common.nav.login'), log_in_path, :class => 'needs-login'

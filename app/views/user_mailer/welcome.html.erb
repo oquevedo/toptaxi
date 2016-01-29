@@ -1,0 +1,10 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+<%= I18n.t("mails.greetings.hello", {name: @user.first_name || @user.email}) %>
+<br>
+<br>
+<%= I18n.t("mails.welcome.thanks") %><br />
+<%= I18n.t("mails.welcome.activate") %><br>
+<a href="<%= @url %>"><%= @url %></a>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

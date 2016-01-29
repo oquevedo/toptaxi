@@ -1,0 +1,23 @@
+- @comments.each do |comment|
+  %div.content.brain-margin
+    %strong= comment.user
+    %small= l comment.created_at, format: :short
+    %br
+    %p= comment.body
+    - if !comment.parent_comment_id 
+      %p= button_tag 'Reply', :class => "btn btn-default btn-sm #{current_user.present? ? '' : 'needs-login'}", :onclick => "reply_form(#{comment.id}, #{comment.id})", :id => "#{comment.id}"
+    %div{:id => "reply-comment-#{comment.id}"}
+  %div.response-list{:id => "responses-#{comment.id}"}
+    - comment.nested_comments.each do |nested|
+      %div.content.brain-margin
+        %strong= nested.user
+        %small= l nested.created_at, format: :short
+        - if nested.response_to_user_id.present?
+          %small en respuesta a 
+          %strong= "@"+nested.response_to_user
+        %br
+        %p= nested.body
+        - if nested.parent_comment_id 
+          %p= button_tag 'Reply', :class => "btn btn-default btn-sm #{current_user.present? ? '' : 'needs-login'}", :onclick => "reply_nested_form(#{nested.id}, #{comment.id})", :id => "#{nested.id}"
+        %div{:id => "reply-comment-#{nested.id}"}
+  %div{:id => "real-reply-comment-#{comment.id}", :style=>"margin-left: 50px;"}

@@ -1,0 +1,79 @@
+//menu Responsive
+@media(max-width:767px) {
+  .btnNombre {
+    border-right: medium none !important;
+  }
+  .btnsalir {
+    border-bottom: medium none !important;
+    border-left: medium none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    a {
+      color: #666666 !important;
+      background: none no-repeat scroll 0 0 transparent !important;
+      display: block;
+      font-weight: normal;
+      text-align: left !important;
+      cursor: pointer;
+      background-image: none;
+      border: medium none;
+      padding: 10px 15px !important;
+      border-radius: 0;
+      margin: 5px !important;
+      border-radius: 5px;
+    }
+    a:hover {
+      background: none no-repeat scroll 0 0 #90A4AE !important;
+      color: #ffffff !important;          
+    }
+  }
+  .transition {
+    width: 200%;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .btnPlus {
+    float: right !important;
+  }
+  .slidemenu {
+    background: none no-repeat scroll 0 0 #f4f4f4;
+    width: 40%;
+    margin: 0 0 0 10%;
+    float: left;
+    color: #ffffff;
+    height: 100%;
+    position: relative;
+    padding: 0 10px;   
+  }
+  .contGeneral {
+    background: none no-repeat scroll 0 0 #ffffff;
+    width: 50% !important;
+    position: relative;
+    display: block;
+    float: left;
+  }
+  .menuExtra {
+    background: none no-repeat scroll 0 0 #f4f4f4;
+    padding: 0 !important;
+  }
+  .btnMenu2int {
+    margin: 0 !important;
+    width: 100% !important;
+    li {
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      border-left: medium none;
+      border-right: medium none;
+      a {
+        color: #666666;
+        margin: 5px !important;
+        border-radius: 5px;
+      }
+      a:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}

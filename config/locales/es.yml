@@ -1,0 +1,374 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+es:
+  recaptcha:
+    errors:
+      verification_failed: "Captcha incorrecto"
+      recaptcha_unreachable: "No ha sido posible verificar el captcha"
+      incorrect-captcha-sol: 'Error de captcha'
+  activerecord:
+    attributes:
+      user:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email: "Email"
+        new_password: "Nueva Contraseña"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        phone: "12345678"
+      service_billing:
+        service_id: "El servicio"
+        supplier_id: "El proveedor"
+        price: "El monto"
+      service_billing_template:
+        service_id: "El servicio"
+        supplier_id: "El proveedor"
+        price: "El monto"
+      service_use:
+        consumed: "El consumo"
+        marker: "El marcador"
+        service_id: "El servicio"
+        period_expense_id: "El período"
+      provision_period_expense:
+        period_expense_id: "El período"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: " campo requerido"
+              taken: " ya existe"
+            username:
+              blank: " campo requerido"
+              taken: " ya existe"
+            password:
+              blank: " campo requerido"
+              too_short: " debe tener al menos 4 caracteres"
+              too_long: " muy larga"
+              confirmation: " no coincide"
+        service_billing:
+          attributes:
+            service_id:
+              blank: " no puede ser nulo"
+            supplier_id:
+              blank: " no puede ser nulo"
+            price:
+              blank: " no puede ser nulo"
+        service_billing_template:
+          attributes:
+            service_id:
+              blank: " no puede ser nulo"
+            supplier_id:
+              blank: " no puede ser nulo"
+            price:
+              blank: " no puede ser nulo"
+        service_use:
+          attributes:
+            consumed:
+              greater_than: " debe ser mayor a 0"
+            marker:
+              greater_than: " debe ser mayor a 0"
+              blank: " no puede ser nulo"
+            service_id: 
+              blank: " no puede ser nulo"
+            period_expense_id:
+              blank: " no puede ser nulo"
+      messages:
+        record_invalid: "Record invalid"
+  social:
+    facebook: "Ingresa con Facebook"
+    google: "Ingresa con Google+"        
+  placeholders:
+    user:
+      first_name: "Nombre"
+      last_name: "Apellido"
+      email: "Email"
+      password: "Contraseña"
+      password_confirmation: "Confirmar contraseña"
+      password_current: "Contraseña actual"
+      password_new: "Nueva contraseña"
+      phone: "12345678"
+  modules:
+    landing:
+      welcome: "Bienvenido a"
+    sign_up:
+      enter_email: "Ingresa tu correo y te notificaremos cuando estemos listos:"
+      subscribe: "Subscríbete"
+    register:
+      title: "Regístrate"
+      btn: "Regístrate"
+      btn_update: "Actualizar"
+      btn_pass: "Cambiar contraseña"
+      footer: "¿Ya tienes cuenta? Ingresa aquí"
+    login:
+      title: "Ingresa"
+      need_login: "Ingresa para continuar"
+      forgot_pass: "¿Olvidaste tu contraseña?"
+      footer: "¿No tienes cuenta? Regístrate aquí"
+    forgot_pass:
+      title: "Recupera tu contraseña"
+      email: "Ingresa tu correo"
+      btn: "Enviar correo de recuperación"
+      enter_new: "Cambia tu contraseña"
+      btn_change: "Cambiar contraseña"
+    edit:
+      title: "Editando usuario"
+      change_pass: "Cambio de contraseña"
+  mails:
+    header:
+      title: "Contacto por Defecto"
+      subtitle: "aqui el subtitulo"
+    footer:
+      suscribe: "Subscribirse"
+      stop: "Dejar de recibir"
+      resend: "Reenviar"
+    greetings:
+      hello: "Hola, %{name}"
+    welcome:
+      title: "Bienvenido"
+      thanks: "Gracias por registrarte a nuestro sitio."
+      soon: "Pronto recibirás más información de nuestra parte!"
+      activate: "Puedes activar tu cuenta haciendo click en el siguiente link:"
+    contact:
+      title: "Contacto"
+      hello: "Hola administradores."
+      message: "Se les ha enviado un correo de feedback:"
+      sent_by: "Enviado por:"
+      email: "Correo de contacto:"
+      subject: "Asunto:"
+      content: "Contenido:"
+    feedback:
+      title: "Feedback"
+      sub_title: "Hemos recibido tu correo, %{name}."
+      thanks: "Gracias por contactarnos."
+      soon: "Te responderemos a la brevedad."
+    recover_pass:
+      title: "Recuperar contraseña"
+      message: "Puedes cambiar tu contraseña haciendo click en el siguiente link:"
+  notice:
+    user:
+      create: "Se ha enviado un link de activación a tu correo"
+      update: "El usuario se ha actualizado"
+      activate: "Tu cuenta ha sido activada"
+      unsubscribe: "Ya no recibirás estos correos"
+    sessions:
+      user_not_found: "El usuario no fue encontrado"
+      recovery: "Se te ha enviado un correo de recuperación"
+      invalid_link: "Este link es inválido o ya fue usado!"
+      pass_changed: "La contraseña ha sido cambiada"
+      already_in: "¡Ya has ingresado!"
+      logged_in: "¡Ahora estás ingresado!"
+      activation: "Revisa tu correo y activa tu cuenta"
+      invalid_pass: "Contraseña o correo incorrectos"
+  common:
+    app_name: "TopTaxi Recambio"
+    app_desc: "Gestión del cambio de campañas"
+    app_url: "http://toptaxi.herokuapp.com"
+    app_url2: "http://toptaxi.herokuapp.com"
+    toggle_navigation: "Invertir navegación"
+    nav:
+      register: "Regístrate"
+      login: "Ingresa"
+      admin: "Admin"
+      logout: "Salir"
+    forms:
+      show_errors: "Errores: "
+      save: "Save"
+    admin:
+      dashboard: "Inicio Admin"
+      users: "Usuarios"
+      go_back: "Volver"
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %b'
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "alrededor de 1 hora"
+        other: "alrededor de %{count} horas"
+      about_x_months:
+        one: "alrededor de 1 mes"
+        other: "alrededor de %{count} meses"
+      about_x_years:
+        one: "alrededor de 1 año"
+        other: "alrededor de %{count} años"
+      almost_x_years:
+        one: "casi 1 año"
+        other: "casi %{count} años"
+      half_a_minute: "medio minuto"
+      less_than_x_minutes:
+        one: "menos de 1 minuto"
+        other: "menos de %{count} minutos"
+      less_than_x_seconds:
+        one: "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      over_x_years:
+        one: "más de 1 año"
+        other: "más de %{count} años"
+      x_days:
+        one: "1 día"
+        other: ! '%{count} días'
+      x_minutes:
+        one: 1 minuto
+        other: ! '%{count} minutos'
+      x_months:
+        one: 1 mes
+        other: ! '%{count} meses'
+      x_seconds:
+        one: 1 segundo
+        other: ! '%{count} segundos'
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minutos
+      month: Mes
+      second: Segundos
+      year: Año
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: debe ser aceptado
+      blank: no puede estar en blanco
+      confirmation: no coincide
+      empty: no puede estar vacío
+      equal_to: debe ser igual a %{count}
+      even: debe ser par
+      exclusion: está reservado
+      greater_than: debe ser mayor que %{count}
+      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+      inclusion: no está incluido en la lista
+      invalid: no es válido
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor que o igual a %{count}
+      not_a_number: no es un número
+      not_an_integer: debe ser un entero
+      odd: debe ser impar
+      record_invalid: ! 'La validación falló: %{errors}'
+      taken: ya está en uso
+      too_long: es demasiado largo (%{count} caracteres máximo)
+      too_short: es demasiado corto (%{count} caracteres mínimo)
+      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+    template:
+      body: ! 'Se encontraron problemas con los siguientes campos:'
+      header:
+        one: No se pudo guardar este/a %{model} porque se encontró 1 error
+        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: .
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: mil millones
+          million: millón
+          quadrillion: mil billones
+          thousand: mil
+          trillion: billón
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', y '
+      two_words_connector: ! ' y '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%A, %d de %B de %Y %H:%M:%S %z'
+      long: ! '%d de %B de %Y %H:%M'
+      short: ! '%d de %b %H:%M'
+      slug: ! '%m-%y'
+    pm: pm
+
+

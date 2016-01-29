@@ -1,0 +1,23 @@
+#registerModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close.close-modal{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h4.modal-title= t('modules.login.need_login')
+      .modal-body
+        .register-box
+          .intModalLog
+            %h1= t('modules.register.title')
+            =render partial: "users/form", :locals => {:@no_errors => true}
+
+            .clear
+              %br
+            .col-lg-12      
+              =link_to "/auth/google_oauth2", class: "btn btn-block btn-social btn-google-plus" do 
+                %i.fa.fa-google-plus
+                =t('social.google')
+              =link_to "/auth/facebook", class: "btn btn-block btn-social btn-facebook" do 
+                %i.fa.fa-facebook
+                =t('social.facebook')
+            .clear
+              %br

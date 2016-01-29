@@ -1,0 +1,31 @@
+%h1 Listing campaigns
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Created by
+      %th Started at
+      %th Finished at
+      %th End payment at
+      %th End instalation at
+      %th
+      %th
+      %th
+
+  %tbody
+    - @campaigns.each do |campaign|
+      %tr
+        %td= campaign.name
+        %td= campaign.created_by
+        %td= campaign.started_at
+        %td= campaign.finished_at
+        %td= campaign.end_payment_at
+        %td= campaign.end_instalation_at
+        %td= link_to 'Show', campaign
+        %td= link_to 'Edit', edit_campaign_path(campaign)
+        %td= link_to 'Destroy', campaign, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Campaign', new_campaign_path

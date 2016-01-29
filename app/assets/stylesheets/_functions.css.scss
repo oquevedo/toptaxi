@@ -1,0 +1,57 @@
+
+/* Functaions */
+
+//Put '...' at the end of text if its too long
+//Usage: @include cutText(300px);
+@mixin cutText($width){
+	width : $width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+//Round the corners of a div. You can also especify which border(Ex: 'top'+'right')
+//Usage: @include radius(10px);
+//Usage: @include radius(10px, 'top', 'left');
+@mixin radius( $radius, $vert:"none", $horz: "none"){
+	@if $vert=="none" or $horz== "none"  {
+		-webkit-border-radius: $radius;
+	       -moz-border-radius: $radius;
+	            border-radius: $radius;
+  	} @else{
+		border-#{$vert}-#{$horz}-radius: $radius;
+		-moz-border-radius-#{$vert}#{$horz}: $radius;
+		-webkit-border-#{$vert}-#{$horz}-radius: $radius;
+	}
+}
+/**/
+//Background gradient with colors in hexa
+//Usage: @include gradient-background(top, #6f6f6f, #4a4a4a);
+@mixin gradient-background($pos, $color_1, $color_2, $color_3: "none"){
+	@if $color_3 == "none"{
+		background:-webkit-linear-gradient($pos, $color_1, $color_2);
+		background:-moz-linear-gradient($pos, $color_1, $color_2);
+		background:linear-gradient($pos, $color_1, $color_2);
+	}
+	@else{
+		background:-webkit-linear-gradient($pos, $color_1, $color_2, $color_3);
+		background:-moz-linear-gradient($pos, $color_1, $color_2, $color_3);
+		background:linear-gradient($pos, $color_1, $color_2, $color_3);
+	}
+}
+
+//Background size
+@mixin background-size($opt){
+	-webkit-background-size: $opt;
+	-moz-background-size: $opt;
+	-o-background-size: $opt;
+	background-size: $opt;
+}
+
+//Box-sizing for text areas
+@mixin box-sizing($opt){
+	-webkit-box-sizing: $opt; /* Safari/Chrome, other WebKit */
+	       -moz-box-sizing: $opt; /* Firefox, other Gecko */
+	            box-sizing: $opt; /* Opera/IE 8+ */
+}

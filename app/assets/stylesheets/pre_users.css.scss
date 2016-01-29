@@ -1,0 +1,12 @@
+.register_box {
+  background: none no-repeat scroll 0 0 #ECEFF1;
+  border-radius: 6px;
+  padding: 20px;
+  overflow: hidden;
+  margin: 20px 0 0 0;
+  .input-group {
+    input.form-control {
+      width: 100%;
+    }
+  }
+}

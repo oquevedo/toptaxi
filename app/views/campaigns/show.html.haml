@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @campaign.name
+%p
+  %b Created by:
+  = @campaign.created_by
+%p
+  %b Started at:
+  = @campaign.started_at
+%p
+  %b Finished at:
+  = @campaign.finished_at
+%p
+  %b End payment at:
+  = @campaign.end_payment_at
+%p
+  %b End instalation at:
+  = @campaign.end_instalation_at
+
+= link_to 'Edit', edit_campaign_path(@campaign)
+\|
+= link_to 'Back', campaigns_path
